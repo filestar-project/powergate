@@ -12,14 +12,15 @@ require (
 	github.com/davidlazar/go-crypto v0.0.0-20200604182044-b73af7476f6c // indirect
 	github.com/desertbit/timer v0.0.0-20180107155436-c41aec40b27f // indirect
 	github.com/dustin/go-humanize v1.0.0
-	github.com/filecoin-project/go-address v0.0.5
-	github.com/filecoin-project/go-data-transfer v1.4.3
-	github.com/filecoin-project/go-fil-commcid v0.0.0-20201016201715-d41df56b4f6a
+	github.com/filecoin-project/go-address v0.0.5-0.20201103152444-f2023ef3f5bb
+	github.com/filecoin-project/go-data-transfer v1.2.0
+	github.com/filecoin-project/go-fil-commcid v0.0.0-20200716160307-8f644712406f
 	github.com/filecoin-project/go-fil-commp-hashhash v0.0.0-20210329070555-d36b89a2504c
-	github.com/filecoin-project/go-fil-markets v1.2.5
+	github.com/filecoin-project/go-fil-markets v1.0.4
 	github.com/filecoin-project/go-jsonrpc v0.1.4-0.20210217175800-45ea43ac2bec
 	github.com/filecoin-project/go-state-types v0.1.1-0.20210506134452-99b279731c48
-	github.com/filecoin-project/lotus v1.10.0
+	github.com/filecoin-project/lotus v1.3.0
+	github.com/filecoin-project/specs-actors/v2 v2.3.5 // indirect
 	github.com/gin-contrib/location v0.0.2
 	github.com/gin-contrib/static v0.0.0-20191128031702-f81c604d8ac2
 	github.com/gin-gonic/gin v1.6.3
@@ -27,6 +28,7 @@ require (
 	github.com/google/go-cmp v0.5.5
 	github.com/google/uuid v1.2.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.2
+	github.com/huin/goupnp v1.0.0 // indirect
 	github.com/improbable-eng/grpc-web v0.14.0
 	github.com/ipfs/go-blockservice v0.1.4
 	github.com/ipfs/go-car v0.0.4
@@ -50,6 +52,7 @@ require (
 	github.com/libp2p/go-libp2p v0.13.0
 	github.com/libp2p/go-libp2p-core v0.8.5
 	github.com/libp2p/go-libp2p-kad-dht v0.11.1
+	github.com/libp2p/go-netroute v0.1.3 // indirect
 	github.com/logrusorgru/aurora v0.0.0-20200102142835-e9ef32dff381
 	github.com/mattn/go-runewidth v0.0.12
 	github.com/mitchellh/go-homedir v1.1.0
@@ -71,14 +74,22 @@ require (
 	github.com/textileio/go-ds-measure v0.1.1-0.20210323185620-1df9394d5b7a
 	github.com/textileio/go-ds-mongo v0.1.4
 	github.com/textileio/go-metrics-opentelemetry v0.0.0-20210323190205-79a1865cff3a
+	go.mongodb.org/mongo-driver v1.4.0 // indirect
 	go.opencensus.io v0.22.6 // indirect
 	go.opentelemetry.io/contrib/instrumentation/runtime v0.18.0
 	go.opentelemetry.io/otel v0.19.0
 	go.opentelemetry.io/otel/exporters/metric/prometheus v0.18.0
 	go.opentelemetry.io/otel/metric v0.19.0
+	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad // indirect
 	google.golang.org/grpc v1.36.1
 	google.golang.org/protobuf v1.25.0
 	nhooyr.io/websocket v1.8.6 // indirect
 )
 
 replace github.com/dgraph-io/badger/v2 => github.com/dgraph-io/badger/v2 v2.2007.2
+
+replace github.com/filecoin-project/go-state-types => github.com/filestar-project/go-state-types v0.1.0
+
+replace github.com/filecoin-project/specs-actors/v2 => github.com/filestar-project/specs-actors/v2 v2.1.1
+
+replace github.com/filecoin-project/lotus => github.com/filestar-project/lotus v1.3.2

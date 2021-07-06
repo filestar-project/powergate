@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/filecoin-project/lotus/api/apistruct"
 	"io"
 	"io/ioutil"
 	"os"
@@ -73,7 +74,7 @@ func (m *Module) Retrieve(ctx context.Context, waddr string, payloadCid cid.Cid,
 	return miner, &autodeleteFile{File: f}, nil
 }
 
-func (m *Module) retrieve(ctx context.Context, lapi *api.FullNodeStruct, lapiCls func(), waddr string, payloadCid cid.Cid, pieceCid *cid.Cid, miners []string, ref *api.FileRef) (string, <-chan marketevents.RetrievalEvent, error) {
+func (m *Module) retrieve(ctx context.Context, lapi *apistruct.FullNodeStruct, lapiCls func(), waddr string, payloadCid cid.Cid, pieceCid *cid.Cid, miners []string, ref *api.FileRef) (string, <-chan marketevents.RetrievalEvent, error) {
 	addr, err := address.NewFromString(waddr)
 	if err != nil {
 		return "", nil, fmt.Errorf("parsing wallet address: %s", err)
@@ -167,7 +168,7 @@ func (m *Module) retrieve(ctx context.Context, lapi *api.FullNodeStruct, lapiCls
 	return o.MinerPeer.Address.String(), out, nil
 }
 
-func getRetrievalOffers(ctx context.Context, lapi *api.FullNodeStruct, payloadCid cid.Cid, pieceCid *cid.Cid, miners []string) []api.QueryOffer {
+func getRetrievalOffers(ctx context.Context, lapi *apistruct.FullNodeStruct, payloadCid cid.Cid, pieceCid *cid.Cid, miners []string) []api.QueryOffer {
 	// Ask each miner about costs and information about retrieving this data.
 	var offers []api.QueryOffer
 	for _, mi := range miners {

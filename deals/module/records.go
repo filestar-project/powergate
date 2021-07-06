@@ -323,7 +323,7 @@ func (m *Module) eventuallyFinalizeDeal(dr deals.StorageDealRecord, timeout time
 			// This case is just being paranoid of dataTransferUpdates not reporting the ending transfer time.
 			// If we're in this status, data transfer should already finished, so just check if we got into
 			// that situation and account for it. Shouldn't happen if Lotus doesn't misreports events.
-			case sm.StorageDealCheckForAcceptance, sm.StorageDealProposalAccepted, sm.StorageDealAwaitingPreCommit:
+			case sm.StorageDealCheckForAcceptance, sm.StorageDealProposalAccepted:
 				if dr.DataTransferStart > 0 && dr.DataTransferEnd == 0 {
 					dr.DataTransferEnd = time.Now().Unix()
 					if err := m.store.PutStorageDeal(dr); err != nil {

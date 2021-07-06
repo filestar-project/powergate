@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/filecoin-project/lotus/api/apistruct"
 	"time"
 
 	"github.com/filecoin-project/go-address"
@@ -167,7 +168,7 @@ func (m *Module) getStorageDealInfo(ctx context.Context, proposal cid.Cid) (deal
 	return sdi, nil
 }
 
-func fromLotusDealInfo(ctx context.Context, client *api.FullNodeStruct, dinfo *api.DealInfo) (deals.StorageDealInfo, error) {
+func fromLotusDealInfo(ctx context.Context, client *apistruct.FullNodeStruct, dinfo *api.DealInfo) (deals.StorageDealInfo, error) {
 	di := deals.StorageDealInfo{
 		ProposalCid:   dinfo.ProposalCid,
 		StateID:       dinfo.State,

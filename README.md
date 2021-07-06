@@ -128,13 +128,20 @@ In short, a fully-synced Lotus node should be available with its API (`127.0.0.1
 ### IPFS node
 A running IPFS node is needed if you plan to use the FFS module.
 
-If that's the case, you can refer [here](https://docs.ipfs.io/guides/guides/install/) for installation instructions, or its [Dockerhub repository](https://hub.docker.com/r/ipfs/go-ipfs) if you want to run a contanerized version. Currently we're supporting v0.5.1. The API endpoint should be accessible to Powergate (port 5001, by default). 
+If that's the case, you can refer [here](https://docs.ipfs.io/guides/guides/install/) for installation instructions, or
+its [Dockerhub repository](https://hub.docker.com/r/ipfs/go-ipfs) if you want to run a contanerized version. Currently
+we're supporting v0.7.0. The API endpoint should be accessible to Powergate (port 5001, by default).
 
-Since FFS _HotStorage_ is pinning Cids in the IPFS node, Powergate should be the only party controlling the pinset of the node. Other systems can share the same IPFS node if can  **guarantee** not unpinning Cids pinned by Powergate FFS instances. 
+Since FFS _HotStorage_ is pinning Cids in the IPFS node, Powergate should be the only party controlling the pinset of
+the node. Other systems can share the same IPFS node if can  **guarantee** not unpinning Cids pinned by Powergate FFS
+instances.
 
 ### Geolite database
-Powergate needs an offline geo-location database to resolve miners country using their IP address. The same folder in which `powd` is executing, should have the Geolite2 database file `GeoLite2-City.mmdb` or you can pass the `--maxminddbfolder` flag to `powd` to specify the path of the folder containing `GeoLite2-City.mmdb`.
-You can copy this file from the GitHub repo at `iplocation/maxmind/GeoLite2-City.mmdb`. If you run Powergate using Docker, this database is bundeled in the image so isn't necessary to have extra considerations.
+Powergate needs an offline geo-location database to resolve miners country using their IP address. The same folder in
+which `powd` is executing, should have the Geolite2 database file `GeoLite2-City.mmdb` or you can pass
+the `--maxminddbfolder` flag to `powd` to specify the path of the folder containing `GeoLite2-City.mmdb`. You can copy
+this file from [this link](https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-City.mmdb) . If you
+run Powergate using Docker, this database is bundeled in the image so isn't necessary to have extra considerations.
 
 ### Server
 To build and install the Powergate server, run:

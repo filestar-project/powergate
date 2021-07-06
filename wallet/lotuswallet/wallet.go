@@ -12,7 +12,7 @@ import (
 
 	"github.com/filecoin-project/go-address"
 	"github.com/filecoin-project/go-state-types/crypto"
-	"github.com/filecoin-project/lotus/api"
+	"github.com/filecoin-project/lotus/api/apistruct"
 	"github.com/filecoin-project/lotus/chain/types"
 	"github.com/ipfs/go-cid"
 	logger "github.com/ipfs/go-log/v2"
@@ -292,7 +292,7 @@ func (m *Module) GetVerifiedClientInfo(ctx context.Context, addr string) (wallet
 	return getVerifiedClientInfo(ctx, c, a)
 }
 
-func getVerifiedClientInfo(ctx context.Context, c *api.FullNodeStruct, addr address.Address) (wallet.VerifiedClientInfo, error) {
+func getVerifiedClientInfo(ctx context.Context, c *apistruct.FullNodeStruct, addr address.Address) (wallet.VerifiedClientInfo, error) {
 	sp, err := c.StateVerifiedClientStatus(ctx, addr, types.EmptyTSK)
 	if err != nil && !strings.Contains(err.Error(), errActorNotFound) {
 		return wallet.VerifiedClientInfo{}, fmt.Errorf("getting verified-client information: %s", err)
