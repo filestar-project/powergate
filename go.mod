@@ -25,10 +25,9 @@ require (
 	github.com/gin-contrib/static v0.0.0-20191128031702-f81c604d8ac2
 	github.com/gin-gonic/gin v1.6.3
 	github.com/golang/protobuf v1.4.3
-	github.com/google/go-cmp v0.5.5
+	github.com/google/go-cmp v0.5.8
 	github.com/google/uuid v1.2.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.2
-	github.com/huin/goupnp v1.0.0 // indirect
 	github.com/improbable-eng/grpc-web v0.14.0
 	github.com/ipfs/go-blockservice v0.1.4
 	github.com/ipfs/go-car v0.0.4
@@ -52,7 +51,6 @@ require (
 	github.com/libp2p/go-libp2p v0.13.0
 	github.com/libp2p/go-libp2p-core v0.8.5
 	github.com/libp2p/go-libp2p-kad-dht v0.11.1
-	github.com/libp2p/go-netroute v0.1.3 // indirect
 	github.com/logrusorgru/aurora v0.0.0-20200102142835-e9ef32dff381
 	github.com/mattn/go-runewidth v0.0.12
 	github.com/mitchellh/go-homedir v1.1.0
@@ -69,18 +67,16 @@ require (
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.7.1
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.8.0
 	github.com/textileio/dsutils v1.0.1
 	github.com/textileio/go-ds-measure v0.1.1-0.20210323185620-1df9394d5b7a
 	github.com/textileio/go-ds-mongo v0.1.4
 	github.com/textileio/go-metrics-opentelemetry v0.0.0-20210323190205-79a1865cff3a
-	go.mongodb.org/mongo-driver v1.4.0 // indirect
 	go.opencensus.io v0.22.6 // indirect
-	go.opentelemetry.io/contrib/instrumentation/runtime v0.18.0
-	go.opentelemetry.io/otel v0.19.0
+	go.opentelemetry.io/contrib/instrumentation/runtime v0.34.0
+	go.opentelemetry.io/otel v1.9.0
 	go.opentelemetry.io/otel/exporters/metric/prometheus v0.18.0
-	go.opentelemetry.io/otel/metric v0.19.0
-	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad // indirect
+	go.opentelemetry.io/otel/metric v0.31.0
 	google.golang.org/grpc v1.36.1
 	google.golang.org/protobuf v1.25.0
 	nhooyr.io/websocket v1.8.6 // indirect
